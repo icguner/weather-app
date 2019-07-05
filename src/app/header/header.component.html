@@ -1,15 +1,15 @@
 <link rel="stylesheet" type="text/css">
 <nav class="navbar navbar-expand-lg ">
-    <a class="navbar-brand" routerLink="daily"><img style="width:50px;height:50px;" src="assets/cloudsmall.png" alt=""></a><span>Hava Durumu</span>
+    <a class="navbar-brand"><i class="fas fa-cloud-sun-rain"></i></a><span>Hava Durumu</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ng-select 
-              [allowClear]="true"
-              [items]="items"
-              (selected)="selected($event)"
-              placeholder="Şehir Seçimi">
-      </ng-select>
     </div>
-  </nav>
+    <a routerLink="daily"><i class="fas fa-search-location mr5"></i></a>
+    <ng-select 
+    [items]="items"
+    (selected)="selected($event)"
+    placeholder="Şehir Seçimi">
+    </ng-select>
+</nav>

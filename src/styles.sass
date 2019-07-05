@@ -1,19 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
-.open.dropdown .dropdown-menu 
-    display: block 
-    transform: none
+@font-face 
+    font-family: SFMedium;
+    src: url(fonts/SF-Pro-Display-Medium.otf);
+
+body
+    background-color: #f1f3f6!important;
+
 h1
+    font-family: SFMedium;
     margin: 0px;
     padding: 0px;
     font-weight: normal !important;
     font-size: 15px !important;
 h2
-    font-size: 32px !important;
+    font-size: 45px !important;
     font-weight: bold !important;
     color: grey;
-    margin-top: 15px !important;
+    margin-top: 5px !important;
 span
+    font-family: SFMedium;
     font-size: 14px;
+img
+    width: 64px;
+    height: 64px;
+    pointer-events: none;
+a
+    color: #212529 !important;
+.dispflx
+    display: flex
+    flex-direction: row
 .ml5
     margin-left: 5px !important;
 .mb5
@@ -26,21 +41,40 @@ span
     background-color: white !important;
     color: grey !important;
 .dropdown-toggle
-    margin-left: 2px !important;
-.we-sunny
-.we-header img
-    width: 64px;
-    height: 64px;
-    pointer-events: none;
+    display: none;
+.container
+    padding-left: 20px !important;
 .container-small
     margin-top: 100px !important;
-    width: 24%;
+    width: 350px;
     margin: auto;
     background-color: white;
+    border-radius: 8px;
 .navbar-collapse 
     margin-left: 40px;
+.we-left-container
+    width: 175px;
 .we-properties
+    width: 170px;
     display: flex;
     flex-direction: row;
+.open.dropdown .dropdown-menu 
+    display: block 
+    transform: none
+    font-size: 13px
+    height: 80px;
+    font-family: SFMedium;
+    min-width: 0px;
+.btn
+    height: 22px !important;
+    width: 132px
+    padding-top: 0px !important;
+.btn
+.form-control
+    width: 130px !important;
+    height: 22px !important;
+    font-family: SFMedium;
+.ui-select-match
+    line-height: 0px !important;
 
 

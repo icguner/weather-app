@@ -1,0 +1,9 @@
+<div *ngFor="let item of weather" class="container">
+    <div class="we-header">
+            <div class="we-properties"><h1>Lokasyon :</h1><span class="ml5">{{item.city_name}}</span></div>
+            <div class="we-properties"><h1>Son Ölçüm :</h1><span class="ml5">{{item.ob_time}}</span></div>
+            <div class="we-properties"><h1></h1><span>{{item.weather.description}}</span></div>
+            <div class="we-properties"><h2>{{item.temp}}</h2><img src="assets/celcius.png"></div>
+    </div>
+</div>
+<router-outlet></router-outlet>

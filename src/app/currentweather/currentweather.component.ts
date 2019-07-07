@@ -1,17 +1,18 @@
-import { Component, OnInit, AfterViewInit, OnDestroy, Injectable } from '@angular/core';
+import { Component, OnInit, OnDestroy, Injectable } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { ApitalkService } from 'src/services/apitalk.service';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 @Injectable({
-    providedIn: 'root',
-  })
+        providedIn: 'root',
+})
 
 @Component({
-  selector: 'app-currentweather',
-  templateUrl: './currentweather.component.html',
-  styleUrls: ['./currentweather.component.sass']
+    selector: 'app-currentweather',
+    templateUrl: './currentweather.component.html',
+    styleUrls: ['./currentweather.component.sass']
 })
+
 export class CurrentweatherComponent implements OnInit,  OnDestroy {
     private subscriptions = new Subscription();
     public latitude: number;
@@ -22,7 +23,7 @@ export class CurrentweatherComponent implements OnInit,  OnDestroy {
 // tslint:disable-next-line: variable-name
 
 constructor(private apitalk: ApitalkService, private spinnerService: Ng4LoadingSpinnerService) {}
-  ngOnInit() {
+ngOnInit() {
     this.spinnerService.show();
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -32,8 +33,9 @@ constructor(private apitalk: ApitalkService, private spinnerService: Ng4LoadingS
             this.spinnerService.hide();
         });
     }
-  }
-  ngOnDestroy() {
+}
+
+ngOnDestroy() {
         this.subscriptions.unsubscribe();
     }
 }

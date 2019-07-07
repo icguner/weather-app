@@ -1,6 +1,6 @@
 <ng4-loading-spinner [template]="template" [timeout]="100000"> </ng4-loading-spinner>
-<div *ngFor="let item of weatherbycity" class="container dispflx">
-    <div class="we-left-container">
+<div class="container dispflx">
+    <div *ngFor="let item of weatherbycity" class="we-left-container">
         <div class="we-properties"><h1>Lokasyon :</h1><span class="ml5">{{item.city_name}}</span></div>
         <div class="we-properties"><h1>Nem oranı :</h1><span class="ml5">%{{item.rh}}</span></div>
         <div class="we-properties"><h1>{{item.weather.description}}</h1></div>

@@ -1,5 +1,5 @@
-import { Component, OnInit, OnChanges, Injectable } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd, Params } from '@angular/router';
+import { Component, OnInit, Injectable } from '@angular/core';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { ApitalkService } from '../../services/apitalk.service';
 import { Observable, Subscription } from 'rxjs';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
@@ -17,6 +17,8 @@ export class CurrentweatherbycityComponent implements OnInit  {
     private cityparam: string;
     public weatherbycity: Observable<any>;
     userSubscription: Subscription;
+    template =
+    `<img class="custom-spinner-template" src="assets/sun-loading.gif">`;
 
     constructor(private route: ActivatedRoute, private apitalkservice: ApitalkService ,
                 private router: Router, private spinnerService: Ng4LoadingSpinnerService) { }

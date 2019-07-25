@@ -16,6 +16,7 @@ import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 export class CurrentweatherbycityComponent implements OnInit  {
     private cityparam: string;
     public weatherbycity: Observable<any>;
+    public isLoading: boolean;
     userSubscription: Subscription;
     template =
     `<img class="custom-spinner-template" src="assets/sun-loading.gif">`;
@@ -25,10 +26,12 @@ export class CurrentweatherbycityComponent implements OnInit  {
 
     ngOnInit() {
       this.spinnerService.show();
+      this.isLoading = true;
       this.userSubscription = this.route.params.subscribe(
             (params: Params) => {
                 this.apitalkservice.getWeatherByCity(params.city).subscribe(res => this.weatherbycity = res.data);
                 this.spinnerService.hide();
+                this.isLoading = false;
         });
     }
 

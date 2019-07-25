@@ -1,12 +1,10 @@
 <link rel="stylesheet" type="text/css">
 <nav class="navbar navbar-expand-lg ">
-    <a class="navbar-brand"><i class="fas fa-cloud-sun-rain"></i></a><span>Hava Durumu</span>
+    <a class="navbar-brand mr10"><i class="fas fa-cloud-sun-rain"></i></a><span class="mr15">Hava Durumu</span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-    </div>
-    <a routerLink="daily"><i class="fas fa-search-location mr5"></i></a>
+    <a routerLink="daily"><i class="fas fa-city mr10"></i></a>
     <ng-select 
     [items]="cities"
     (selected)="selected($event)"

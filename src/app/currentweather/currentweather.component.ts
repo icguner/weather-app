@@ -17,7 +17,8 @@ export class CurrentweatherComponent implements OnInit,  OnDestroy {
     private subscriptions = new Subscription();
     public latitude: number;
     public longitude: number;
-    weather: Observable<any>;
+    public weather: Observable<any>;
+    public isLoading: boolean;
     template =
     `<img class="custom-spinner-template" src="assets/sun-loading.gif">`;
 // tslint:disable-next-line: variable-name
@@ -25,12 +26,14 @@ export class CurrentweatherComponent implements OnInit,  OnDestroy {
 constructor(private apitalk: ApitalkService, private spinnerService: Ng4LoadingSpinnerService) {}
 ngOnInit() {
     this.spinnerService.show();
+    this.isLoading = true;
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
             this.latitude = position.coords.latitude;
             this.longitude = position.coords.longitude;
-            this.subscriptions.add(this.apitalk.getWeatherByGeo(this.latitude, this.longitude).subscribe(res => this.weather = res.data));
+            this.subscriptions.add(this.apitalk.getWeatherByGeo(this.latitude, this.longitude).subscribe(res =>  this.weather = res));
             this.spinnerService.hide();
+            this.isLoading = false;
         });
     }
 }
